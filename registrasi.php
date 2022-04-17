@@ -77,7 +77,7 @@ if (isset($_POST["register"])) {
                             <input type="password" name="re_pass" id="re_pass" placeholder="Ulangi password anda" required/>
                         </div>
                         <div class="form-group form-button">
-                            <input type="submit" name="signup" id="signup" class="form-submit" href="login.php" value="Daftar"/>
+                            <input type="submit" name="signup" id="signup" class="form-submit" href="index.php" value="Daftar"/>
                         </div>
                     </form>
                 </div>

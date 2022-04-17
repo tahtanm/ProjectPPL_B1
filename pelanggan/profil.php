@@ -14,41 +14,41 @@
                     <form method="POST" class="akun-form" id="akun-form">
                         <div class="mb-3">
                             <label for="nama" class="zmdi zmdi-account material-icons-name">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="nama" value="<?= $pelanggan["nama lengkap"]; ?>">
+                            <input readonly="readonly" type="text" class="form-control" id="nama" value="<?= $pelanggan["nama lengkap"]; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="tempat lahir" class="zmdi zmdi-account material-icons-name">Tempat lahir</label>
-                            <input type="text" class="form-control" id="tempat lahir" value="<?= $pelanggan["tempat lahir"]; ?>">
+                            <input readonly="readonly" type="text" class="form-control" id="tempat lahir" value="<?= $pelanggan["tempat lahir"]; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="tanggal lahir" class="zmdi zmdi-account material-icons-name">Tanggal Lahir</label>
-                            <input type="date" class="form-control" id="tanggal lahir" value="<?= $pelanggan["tanggal lahir"]; ?>">                            </div>
+                            <input readonly="readonly" type="date" class="form-control" id="tanggal lahir" value="<?= $pelanggan["tanggal lahir"]; ?>">  
+                        </div>
                         <div class="mb-3">
                             <label for="jenis kelamin" class="zmdi zmdi-account material-icons-name">Jenis Kelamin</label>
-                            <input type="text" class="form-control" id="jenis kelamin" value="<?= $pelanggan["jenis kelamin"]; ?>">
+                            <input readonly="readonly" type="text" class="form-control" id="jenis kelamin" value="<?= $pelanggan["jenis kelamin"]; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="alamat" class="zmdi zmdi-account material-icons-name">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" value="<?= $pelanggan["alamat"]; ?>">                            </div>
+                            <input readonly="readonly" type="text" class="form-control" id="alamat" value="<?= $pelanggan["alamat"]; ?>">                            </div>
                         <div class="mb-3">
                             <label for="no hp" class="zmdi zmdi-account material-icons-name">No HP</label>
-                            <input type="text" class="form-control" id="no hp" value="<?= $pelanggan["no hp"]; ?>">
+                            <input readonly="readonly" type="text" class="form-control" id="no hp" value="<?= $pelanggan["no hp"]; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="zmdi zmdi-account material-icons-name">Email</label>
-                            <input type="text" class="form-control" id="email" value="<?= $pelanggan["email"]; ?>">
+                            <input readonly="readonly" type="text" class="form-control" id="email" value="<?= $pelanggan["email"]; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="username" class="zmdi zmdi-account material-icons-name">Username</label>
-                            <input type="text" class="form-control" id="username" value="<?= $pelanggan["username"]; ?>">
+                            <input readonly="readonly" type="text" class="form-control" id="username" value="<?= $pelanggan["username"]; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="zmdi zmdi-account material-icons-name">Password</label>
-                            <input type="password" class="form-control" id="password" value="<?= $pelanggan["password"]; ?>">
+                            <input readonly="readonly" type="password" class="form-control" id="password" value="<?= $pelanggan["password"]; ?>">
                         </div>
                         <div class="form-group form-button">
                             <a href="ubah.php">Ubah</a>
-                            <a href="logout.php">Logout</a>
                         </div>
                     </form>
                 </div>        

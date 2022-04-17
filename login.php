@@ -12,23 +12,43 @@ if(isset($_POST["login"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $result = mysqli_query($conn, "SELECT * FROM pelanggan WHERE username = '$username'");
-
+    $x = mysqli_query($conn, "SELECT * FROM pelanggan WHERE username = '$username'");
+    $y = mysqli_query($conn, "SELECT * FROM pegawai WHERE username = '$username'");
+    $z = mysqli_query($conn, "SELECT * FROM pemilik WHERE username = '$username'");
+    
     // cek username
-    if(mysqli_num_rows($result) === 1 ){
+    if(mysqli_num_rows($x) === 1 ){
         // cek password 
-        $row = mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($x);
         if(password_verify($password, $row["password"]) ) {
             // set session 
             $_SESSION["login"] = true;
 
-            header("Location: index.php");
+            header("Location:pelanggan/index.php");
             exit;
         }
+    } elseif(mysqli_num_rows($y) === 1 ){
+        // cek password 
+        $row = mysqli_fetch_assoc($y);
+        if(password_verify($password, $row["password"]) ) {
+            // set session 
+            $_SESSION["login"] = true;
+
+            header("Location:pegawai/index.php");
+            exit;
+        }
+    } elseif(mysqli_fetch_assoc($z) === 1){
+       // cek password 
+       $row = mysqli_fetch_assoc($z);
+       if(password_verify($password, $row["password"]) ) {
+           // set session 
+           $_SESSION["login"] = true;
+
+           header("Location:pemilik/index.php");
+           exit;
+       } 
     }
-
     $error = true;
-
 }
 ?>
 
@@ -73,7 +93,8 @@ if(isset($_POST["login"])) {
                             <input type="password" name="password" id="password" placeholder="Password" required/>
                         </div>
                         <div class="form-group form-button">
-                            <input type="submit" name="signin" id="signin" class="form-submit" href="sidebar.php" value="Masuk"/>
+                            <input type="submit" name="signin" id="signin" class="form-submit" href="index.php" value="Masuk"/>
+                            header
                         </div>
                     </form>
                 </div>
