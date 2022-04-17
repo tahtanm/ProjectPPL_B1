@@ -1,35 +1,35 @@
 <?php 
-// // session_start();
+session_start();
 
-// if(isset($_SESSION["login"])) {
-//     header("Location: index.php");
-//     exit;
-// }
+if(isset($_SESSION["login"])) {
+    header("Location: index.php");
+    exit;
+}
 
-// require 'functions.php'; 
+require 'functions.php'; 
 
-// if(isset($_POST["login"])) {
-//     $username = $_POST["username"];
-//     $password = $_POST["password"];
+if(isset($_POST["login"])) {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-//     $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+    $result = mysqli_query($conn, "SELECT * FROM pelanggan WHERE username = '$username'");
 
-//     // cek username
-//     if(mysqli_num_rows($result) === 1 ){
-//         // cek password 
-//         $row = mysqli_fetch_assoc($result);
-//         if(password_verify($password, $row["password"]) ) {
-//             // set session 
-//             $_SESSION["login"] = true;
+    // cek username
+    if(mysqli_num_rows($result) === 1 ){
+        // cek password 
+        $row = mysqli_fetch_assoc($result);
+        if(password_verify($password, $row["password"]) ) {
+            // set session 
+            $_SESSION["login"] = true;
 
-//             header("Location: index.php");
-//             exit;
-//         }
-//     }
+            header("Location: index.php");
+            exit;
+        }
+    }
 
-//     $error = true;
+    $error = true;
 
-// }
+}
 ?>
 
 <!DOCTYPE html>
@@ -63,17 +63,17 @@
                         <p style="color: red; font-style: italic">username / password salah!</p>
                     <?php endif; ?>
 
-                    <form method="POST" class="register-form" id="login-form">
+                    <form method="POST" class="login-form" id="login-form">
                         <div class="form-group">
-                            <label for="nama"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="nama" id="nama" placeholder="Nama Lengkap" required/>
+                            <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="username" id="username" placeholder="Username" required/>
                         </div>
                         <div class="form-group">
                             <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                             <input type="password" name="password" id="password" placeholder="Password" required/>
                         </div>
                         <div class="form-group form-button">
-                            <input type="submit" name="signin" id="signin" class="form-submit" value="Masuk"/>
+                            <input type="submit" name="signin" id="signin" class="form-submit" href="sidebar.php" value="Masuk"/>
                         </div>
                     </form>
                 </div>

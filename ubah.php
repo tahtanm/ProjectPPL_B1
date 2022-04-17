@@ -2,7 +2,7 @@
 // session_start();
 
 // if(!isset($_SESSION["login"])) {
-//     header("Location: login.php");
+//     header("Location: index.php");
 //     exit;
 // }
 
@@ -12,7 +12,7 @@
 // $id = $_GET["id"];
 
 // // query data mahasiswa berdasarkan id 
-// $mhs = query("SELECT * FROM mahasiswa WHERE id = $id")[0];
+// $mhs = query("SELECT * FROM pelanggan WHERE id = $id")[0];
 
 // // cek apakah tombol submit sudah ditekan atau belum
 // if (isset($_POST["submit"])) {
@@ -22,7 +22,7 @@
 //         echo "
 //             <script>
 //                 alert('Data Berhasil Diubah!');
-//                 document.location.href = 'index.php';
+//                 document.location.href = 'akun.php';
 //             </script>
 //         ";
 
@@ -30,23 +30,13 @@
 //         echo "
 //             <script>
 //                 alert('Data Gagal Diubah!');
-//                 document.location.href = 'index.php';
+//                 document.location.href = 'akun.php';
 //             </script>
 //         ";
 
 //         echo mysqli_error($conn); // untuk menampilkan pesan error nya
 //     }
-
-    // cek apakah data berhasil diubah atau tidak sebelum ada function
-    // if (mysqli_affected_rows($conn) > 0){
-    //     echo "Data Berhasil Diubah!";
-    // } else {
-    //     echo "Data Gagal Diubah!";
-    //     echo "<br>";
-    //     echo mysqli_error($conn);
-    // }
 // }
-
 ?> 
 
 <!DOCTYPE html>
@@ -58,40 +48,47 @@
     <title>Ubah Akun</title>
 </head>
 <body>
-    <h1>Ubah Data Mahasiswa</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?= $mhs["id"]; ?>">
-        <input type="hidden" name="gambarlama" value="<?= $mhs["gambar"]; ?>">
-        <ul>
-            <li>
-                <label for="nama">Nama: </label>
-                <input type="text" name="nama" id="nama" required
-                value="<?= $mhs["nama"];?>">
-            </li>
-            <li>
-                <label for="nim">NIM: </label>
-                <input type="text" name="nim" id="nim" required
-                value="<?= $mhs["nim"];?>">
-            </li>
-            <li>
-                <label for="email">Email: </label>
-                <input type="text" name="email" id="email" required
-                value="<?= $mhs["email"];?>">
-            </li>
-            <li>
-                <label for="jurusan">Jurusan: </label>
-                <input type="text" name="jurusan" id="jurusan" required
-                value="<?= $mhs["jurusan"];?>">
-            </li>
-            <li>
-                <label for="gambar">Gambar: </label> <br>
-                <img src="img/<?= $mhs['gambar']; ?>" width="40" alt=""> <br>
-                <input type="file" name="gambar" id="gambar" required>
-            </li>
-            <li>
-                <button type="submit" name="submit">Ubah Data!</button>
-            </li>
-        </ul>
+    <h1>Ubah Akun</h1>
+    <form action="" method="post">
+        <input type="hidden" name="id" value="<?= $pelanggan["id"]; ?>">
+        <div class="mb-3">
+            <label for="nama" class="zmdi zmdi-account material-icons-name">Nama Lengkap</label>
+            <input type="text" class="form-control" id="nama" value="<?= $pelanggan["nama lengkap"]; ?>">
+        </div>
+        <div class="mb-3">
+            <label for="tempat lahir" class="zmdi zmdi-account material-icons-name">Tempat lahir</label>
+            <input type="text" class="form-control" id="tempat lahir" value="<?= $pelanggan["tempat lahir"]; ?>">
+        </div>
+        <div class="mb-3">
+            <label for="tanggal lahir" class="zmdi zmdi-account material-icons-name">Tanggal Lahir</label>
+            <input type="date" class="form-control" id="tanggal lahir" value="<?= $pelanggan["tanggal lahir"]; ?>">                            </div>
+        </div>    
+        <div class="mb-3">
+            <label for="jenis kelamin" class="zmdi zmdi-account material-icons-name">Jenis Kelamin</label>
+            <input type="text" class="form-control" id="jenis kelamin" value="<?= $pelanggan["jenis kelamin"]; ?>">
+        </div>
+        <div class="mb-3">
+            <label for="alamat" class="zmdi zmdi-account material-icons-name">Alamat</label>
+            <input type="text" class="form-control" id="alamat" value="<?= $pelanggan["alamat"]; ?>">                            
+        </div>
+        <div class="mb-3">
+            <label for="no hp" class="zmdi zmdi-account material-icons-name">No HP</label>
+            <input type="text" class="form-control" id="no hp" value="<?= $pelanggan["no hp"]; ?>">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="zmdi zmdi-account material-icons-name">Email</label>
+            <input type="text" class="form-control" id="email" value="<?= $pelanggan["email"]; ?>">
+        </div>
+        <div class="mb-3">
+            <label for="username" class="zmdi zmdi-account material-icons-name">Username</label>
+            <input type="text" class="form-control" id="username" value="<?= $pelanggan["username"]; ?>">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="zmdi zmdi-account material-icons-name">Password</label>
+            <input type="password" class="form-control" id="password" value="<?= $pelanggan["password"]; ?>">
+        </div>
+
+        <button type="submit" name="submit">Ubah Data!</button>
     </form>
 </body>
 </html>

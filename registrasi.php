@@ -1,14 +1,14 @@
 <?php 
-// require 'functions.php';
+require 'functions.php';
 
-// if (isset($_POST["register"])) {
-//     if(registrasi($_POST) > 0) {
-//         echo "<script>
-//             alert('User baru berhasil ditambahkan';)</script>";
-//     } else {
-//         echo mysqli_error($conn);
-//     }
-// }
+if (isset($_POST["register"])) {
+    if(registrasi($_POST) > 0) {
+        echo "<script>
+            alert('User baru berhasil ditambahkan';)</script>";
+    } else {
+        echo mysqli_error($conn);
+    }
+}
 ?> 
 
 <!DOCTYPE html>
@@ -77,7 +77,7 @@
                             <input type="password" name="re_pass" id="re_pass" placeholder="Ulangi password anda" required/>
                         </div>
                         <div class="form-group form-button">
-                            <input type="submit" name="signup" id="signup" class="form-submit" value="Daftar"/>
+                            <input type="submit" name="signup" id="signup" class="form-submit" href="login.php" value="Daftar"/>
                         </div>
                     </form>
                 </div>

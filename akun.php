@@ -29,8 +29,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="alamat" class="zmdi zmdi-account material-icons-name">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" value="<?= $pelanggan["alamat"]; ?>">                            
-                        </div>
+                            <input type="text" class="form-control" id="alamat" value="<?= $pelanggan["alamat"]; ?>">                            </div>
                         <div class="mb-3">
                             <label for="no hp" class="zmdi zmdi-account material-icons-name">No HP</label>
                             <input type="text" class="form-control" id="no hp" value="<?= $pelanggan["no hp"]; ?>">
@@ -55,5 +54,7 @@
                 </div>        
         </div>
     </div>
+    
+
 </body>
 </html>
